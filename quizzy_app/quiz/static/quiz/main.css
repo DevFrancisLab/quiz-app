@@ -1,0 +1,29 @@
+#navbarItemsContainer {
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+#navbarSupportedContent .nav-items-ul {
+    margin-left: 350px;
+    display: flex;
+    column-gap: 50px;
+}
+
+#navbarSupportedContent .bg-login {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#navbarSupportedContent .bg-login:hover {
+    background-color: darkred;
+}
+
+.homeContent {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}

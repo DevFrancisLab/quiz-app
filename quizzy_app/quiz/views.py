@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse('<h1>Quiz Home</h1>')
+    return render(request,'quiz/home.html', {'title': 'Home'})
 
-def about(request):
-    return HttpResponse('<h1>Quz About</h1>')
+def leaderboard(request):
+    return render(request,'quiz/leaderboard.html', {'title': 'Leaderboard'})
