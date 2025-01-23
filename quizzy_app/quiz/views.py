@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Results
 
 def home(request):
     return render(request,'quiz/home.html', {'title': 'Home'})
 
 def leaderboard(request):
-    return render(request,'quiz/leaderboard.html', {'title': 'Leaderboard'})
+    context = {
+        'results': Results.objects.all()
+    }
+    return render(request,'quiz/leaderboard.html', context)

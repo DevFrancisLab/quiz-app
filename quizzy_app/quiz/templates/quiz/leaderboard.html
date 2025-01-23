@@ -1,4 +1,8 @@
 {% extends "quiz/base.html" %}
 {% block content %}
-    <h1>Leaderboad Page</h1>
+    {% for result in results %}
+        <h1>{{ result.title }}</h1>
+        <p>By {{ result.player }} on {{ result.date_done }}</p>
+        <p>{{ result.marks }}</p>
+    {% endfor %}
 {% endblock content %}
