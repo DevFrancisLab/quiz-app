@@ -31,7 +31,16 @@
                     <a class="nav-link" href="{% url 'quiz-leaderboard' %}">Leaderboad</a>
                   </li>
                 </ul>
-                  <button class="btn btn-outline-success btn-lg bg-login" type="submit">Login</button>
+                  {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                  <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link">Log Out</button>
+                </form>  
+                  {% else %}
+                    <a class="btn btn-outline-success btn-lg bg-login" href="{% url 'login' %}" role="button">Login</a>
+                    <a class="btn btn-primary" href="{% url 'register' %}" role="button">Sign Up</a>
+                  {% endif %}
               </div>
             </div>
           </nav>
